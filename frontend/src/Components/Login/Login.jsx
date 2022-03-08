@@ -1,9 +1,8 @@
-import React from 'react';
-import './login.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import authApi from '../../apis/apiAuth';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import authApi from '../../api/apiAuth';
+import './login.css';
 
 const Login = () => {
   const dispatch = useDispatch();

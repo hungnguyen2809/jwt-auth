@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import authApi from '../../apis/apiAuth';
+import authApi from '../../api/apiAuth';
 import './register.css';
 
 const Register = () => {
