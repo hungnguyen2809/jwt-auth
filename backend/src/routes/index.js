@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import authRouter from './AuthRouter';
+import commonRouter from './CommonRouter';
 import userRouter from './UserRouter';
 
 const rotues = Router();
@@ -9,5 +10,8 @@ rotues.use('/auth', authRouter);
 
 //USER ROUTER
 rotues.use('/user', userRouter);
+
+//COMMON ROUTER
+rotues.use('/common', commonRouter);
 
 export default rotues;

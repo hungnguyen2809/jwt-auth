@@ -1,5 +1,6 @@
-import JWT from './middleware/jwt';
 import { EntityResponse } from '../services';
+import JWT from './middleware/jwt';
+import MULTER from './middleware/mult';
 
 const MiddlewareController = {
   verify: (req, res, next) => {
@@ -14,6 +15,16 @@ const MiddlewareController = {
       } else {
         res.status(403).json(EntityResponse.error('You are not alowed to delete other', 403));
       }
+    });
+  },
+  uploadSingle: (req, res, next) => {
+    JWT.verify(req, res, () => {
+      MULTER.uploadSingle(req, res, next);
+    });
+  },
+  uploadMulti: (req, res, next) => {
+    JWT.verify(req, res, () => {
+      MULTER.uploadMulti(req, res, next);
     });
   },
 };
